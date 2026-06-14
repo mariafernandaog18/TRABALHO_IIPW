@@ -53,3 +53,26 @@ livro => livro.titulo.toLowerCase().includes(busca)
 mostrarLivros(filtrados);
 
 }
+function excluirLivro(index){
+
+livros.splice(index,1);
+
+localStorage.setItem(
+"livros",
+JSON.stringify(livros)
+);
+
+mostrarLivros(livros);
+
+}
+
+function editarLivro(index){
+
+localStorage.setItem(
+"editar",
+index
+);
+
+location.href="editar.html";
+
+}
